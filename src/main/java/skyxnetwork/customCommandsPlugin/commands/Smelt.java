@@ -20,13 +20,13 @@ public class Smelt implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Cette commande est uniquement pour les joueurs !");
-            return false;
+            return true;
         }
 
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
         if (itemInHand == null || itemInHand.getType() == Material.AIR) {
             player.sendMessage("Vous devez tenir un objet !");
-            return false;
+            return true;
         }
 
         String itemName = itemInHand.getType().name();
@@ -45,6 +45,6 @@ public class Smelt implements CommandExecutor {
         }
 
         player.sendMessage(plugin.getConfig().getString("messages.smelt-fail"));
-        return false;
+        return true;
     }
 }
