@@ -12,6 +12,9 @@ smeltable-items:
   IRON_ORE: IRON_INGOT
   GOLD_ORE: GOLD_INGOT
   SAND: GLASS
+# Possible placeholders :
+# - %input%
+# - %output%
 messages:
-  smelt-success: "&aYou have melted &f%input% &aand obtained &f%output%."
-  smelt-fail: "&cThis item cannot be melted."
+  smelt-success: "§aYou have melted §f%input% §aand obtained §f%output%."
+  smelt-fail: "§cThis item cannot be melted."
