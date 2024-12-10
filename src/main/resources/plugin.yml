@@ -1,5 +1,5 @@
 name: CustomCommandsPlugin
-version: '1.1-SNAPSHOT'
+version: '1.2-FINAL'
 main: skyxnetwork.customCommandsPlugin.CustomCommandsPlugin
 api-version: '1.20'
 description: Plugin adding /craft, /ec, /enderchest, and /smelt commands.
