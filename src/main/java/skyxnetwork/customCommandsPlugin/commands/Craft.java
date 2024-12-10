@@ -13,7 +13,7 @@ public class Craft implements CommandExecutor {
             player.openWorkbench(null, true); // Ouvre une table de craft virtuelle
             return true;
         }
-        sender.sendMessage("Cette commande est uniquement pour les joueurs !");
-        return false;
+        sender.sendMessage("This command is for players only !");
+        return true;
     }
 }
