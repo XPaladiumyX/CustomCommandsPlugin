@@ -16,3 +16,6 @@ commands:
   smelt:
     description: Melts the item in your hand.
     usage: /smelt
+  customcommandsplugin:
+    description: Commands to reload the CustomCommandsPlugin plugin.
+    usage: /customcommandsplugin reload
