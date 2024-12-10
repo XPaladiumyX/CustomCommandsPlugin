@@ -3,6 +3,7 @@ package skyxnetwork.customCommandsPlugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import skyxnetwork.customCommandsPlugin.commands.Craft;
 import skyxnetwork.customCommandsPlugin.commands.Enderchest;
+import skyxnetwork.customCommandsPlugin.commands.ReloadCommand;
 import skyxnetwork.customCommandsPlugin.commands.Smelt;
 
 public class CustomCommandsPlugin extends JavaPlugin {
@@ -35,7 +36,11 @@ public class CustomCommandsPlugin extends JavaPlugin {
         } else {
             getLogger().warning("La commande /smelt n'est pas définie dans plugin.yml !");
         }
-
+        if (getCommand("customcommandsplugin") != null) {
+            getCommand("customcommandsplugin").setExecutor(new ReloadCommand(this));
+        } else {
+            getLogger().warning("La commande /CustomCommandsPlugin n'est pas définie dans plugin.yml !");
+        }
         getLogger().info("CustomCommandsPlugin activé !");
     }
 
