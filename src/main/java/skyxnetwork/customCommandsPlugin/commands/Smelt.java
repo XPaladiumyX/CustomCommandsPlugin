@@ -35,9 +35,10 @@ public class Smelt implements CommandExecutor {
         if (smeltedItemName != null) {
             Material smeltedMaterial = Material.matchMaterial(smeltedItemName);
             if (smeltedMaterial != null) {
-                itemInHand.setAmount(itemInHand.getAmount() - 1);
-                player.getInventory().addItem(new ItemStack(smeltedMaterial));
-                player.sendMessage(plugin.getConfig().getString("messages.smelt-success")
+                int amount = itemInHand.getAmount(); // Nombre total d'items dans la main
+                itemInHand.setAmount(0); // Supprime tous les items de la main
+                player.getInventory().addItem(new ItemStack(smeltedMaterial, amount)); // Ajoute l'équivalent fondu
+                player.sendMessage(plugin.getConfig().getString("messages.smelt-success", "§aYou smelted %input% into %output%!")
                         .replace("%input%", itemName)
                         .replace("%output%", smeltedItemName));
                 return true;
