@@ -1,0 +1,15 @@
+# This is an Example
+# smeltable-items:
+# COBBLESTONE: STONE
+# Left is the item to smelt
+# Right is the item to give when smelted
+# Please consider giving a star, it will help a lot ♥️! ^^
+# Github : https://github.com/XPaladiumyX/CustomCommandsPlugin
+# Discord Community : https://discord.gg/pTErYjTh5h
+smeltable-items:
+  IRON_ORE: IRON_INGOT
+  GOLD_ORE: GOLD_INGOT
+  SAND: GLASS
+messages:
+  smelt-success: "&aYou have melted &f%input% &aand obtained &f%output%."
+  smelt-fail: "&cThis item cannot be melted."
