@@ -19,7 +19,13 @@ public class Smelt implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage("This command is for players only!");
+            sender.sendMessage("§cThis command is for players only!");
+            return true;
+        }
+
+        if (!player.hasPermission("skyxnetwork.customcommandsplugin.smelt") &&
+                !player.hasPermission("skyxnetwork.customcommandsplugin.*")) {
+            player.sendMessage("§cYou do not have permission to use this command.");
             return true;
         }
 
@@ -35,9 +41,9 @@ public class Smelt implements CommandExecutor {
         if (smeltedItemName != null) {
             Material smeltedMaterial = Material.matchMaterial(smeltedItemName);
             if (smeltedMaterial != null) {
-                int amount = itemInHand.getAmount(); // Nombre total d'items dans la main
-                itemInHand.setAmount(0); // Supprime tous les items de la main
-                player.getInventory().addItem(new ItemStack(smeltedMaterial, amount)); // Ajoute l'équivalent fondu
+                int amount = itemInHand.getAmount();
+                itemInHand.setAmount(0);
+                player.getInventory().addItem(new ItemStack(smeltedMaterial, amount));
                 player.sendMessage(plugin.getConfig().getString("messages.smelt-success", "§aYou smelted %input% into %output%!")
                         .replace("%input%", itemName)
                         .replace("%output%", smeltedItemName));

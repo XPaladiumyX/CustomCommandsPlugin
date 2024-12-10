@@ -15,13 +15,14 @@ public class ReloadCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
-            plugin.reloadConfig(); // Recharge le fichier config.yml
-            sender.sendMessage("§aThe config.yml file has been reloaded successfully!");
+        if (!sender.hasPermission("skyxnetwork.customcommandsplugin.reload") &&
+                !sender.hasPermission("skyxnetwork.customcommandsplugin.*")) {
+            sender.sendMessage("§cYou do not have permission to use this command.");
             return true;
         }
 
-        sender.sendMessage("§cUsage: /CustomCommandsPlugin reload");
+        plugin.reloadConfig(); // Recharge le fichier config.yml
+        sender.sendMessage("§aConfiguration reloaded successfully!");
         return true;
     }
 }

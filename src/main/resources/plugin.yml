@@ -19,3 +19,19 @@ commands:
   customcommandsplugin:
     description: Commands to reload the CustomCommandsPlugin plugin.
     usage: /customcommandsplugin reload
+permissions:
+  skyxnetwork.customcommandsplugin.*:
+    description: Permission pour bypass toutes les commandes.
+    default: op
+  skyxnetwork.customcommandsplugin.reload:
+    description: Permission pour recharger le plugin.
+    default: op
+  skyxnetwork.customcommandsplugin.craft:
+    description: Permission pour exécuter la commande /craft.
+    default: true
+  skyxnetwork.customcommandsplugin.enderchest:
+    description: Permission pour exécuter les commandes /enderchest et /ec.
+    default: true
+  skyxnetwork.customcommandsplugin.smelt:
+    description: Permission pour exécuter la commande /smelt.
+    default: true
