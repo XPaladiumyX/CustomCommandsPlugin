@@ -14,6 +14,6 @@ public class Enderchest implements CommandExecutor {
             return true;
         }
         sender.sendMessage("Cette commande est uniquement pour les joueurs !");
-        return false;
+        return true;
     }
 }
