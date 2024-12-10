@@ -19,13 +19,13 @@ public class Smelt implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage("Cette commande est uniquement pour les joueurs !");
+            sender.sendMessage("This command is for players only!");
             return true;
         }
 
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
         if (itemInHand == null || itemInHand.getType() == Material.AIR) {
-            player.sendMessage("Vous devez tenir un objet !");
+            player.sendMessage("You must hold an item!");
             return true;
         }
 
@@ -44,7 +44,7 @@ public class Smelt implements CommandExecutor {
             }
         }
 
-        player.sendMessage(plugin.getConfig().getString("messages.smelt-fail", "Cet objet ne peut pas être fondu !"));
+        player.sendMessage(plugin.getConfig().getString("messages.smelt-fail", "This item cannot be melted!"));
         return true;
     }
 }

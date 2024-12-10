@@ -17,7 +17,7 @@ public class ReloadCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
             plugin.reloadConfig(); // Recharge le fichier config.yml
-            sender.sendMessage("§aLe fichier config.yml a été rechargé avec succès !");
+            sender.sendMessage("§aThe config.yml file has been reloaded successfully!");
             return true;
         }
 

@@ -13,7 +13,7 @@ public class Enderchest implements CommandExecutor {
             player.openInventory(player.getEnderChest()); // Ouvre l'enderchest
             return true;
         }
-        sender.sendMessage("Cette commande est uniquement pour les joueurs !");
+        sender.sendMessage("This command is for players only!");
         return true;
     }
 }
