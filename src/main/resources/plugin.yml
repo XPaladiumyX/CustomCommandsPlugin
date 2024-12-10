@@ -2,3 +2,17 @@ name: CustomCommandsPlugin
 version: '1.1-SNAPSHOT'
 main: skyxnetwork.customCommandsPlugin.CustomCommandsPlugin
 api-version: '1.20'
+description: Plugin adding /craft, /ec, /enderchest, and /smelt commands.
+commands:
+  craft:
+    description: Opens a virtual crafting table.
+    usage: /craft
+  ec:
+    description: Open your EnderChest.
+    usage: /ec
+  enderchest:
+    description: Open your EnderChest.
+    usage: /enderchest
+  smelt:
+    description: Melts the item in your hand.
+    usage: /smelt
