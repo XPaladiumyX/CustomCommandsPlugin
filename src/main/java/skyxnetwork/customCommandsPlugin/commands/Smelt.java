@@ -25,7 +25,7 @@ public class Smelt implements CommandExecutor {
 
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
         if (itemInHand == null || itemInHand.getType() == Material.AIR) {
-            player.sendMessage("You must hold an item!");
+            player.sendMessage("§cYou must hold an item!");
             return true;
         }
 
@@ -44,7 +44,7 @@ public class Smelt implements CommandExecutor {
             }
         }
 
-        player.sendMessage(plugin.getConfig().getString("messages.smelt-fail", "This item cannot be melted!"));
+        player.sendMessage(plugin.getConfig().getString("messages.smelt-fail", "§cThis item cannot be melted!"));
         return true;
     }
 }
