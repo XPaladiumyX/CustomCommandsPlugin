@@ -44,7 +44,7 @@ public class Smelt implements CommandExecutor {
             }
         }
 
-        player.sendMessage(plugin.getConfig().getString("messages.smelt-fail"));
+        player.sendMessage(plugin.getConfig().getString("messages.smelt-fail", "Cet objet ne peut pas être fondu !"));
         return true;
     }
 }
