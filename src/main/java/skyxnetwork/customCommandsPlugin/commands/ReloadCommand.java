@@ -22,6 +22,6 @@ public class ReloadCommand implements CommandExecutor {
         }
 
         sender.sendMessage("§cUsage: /CustomCommandsPlugin reload");
-        return false;
+        return true;
     }
 }
