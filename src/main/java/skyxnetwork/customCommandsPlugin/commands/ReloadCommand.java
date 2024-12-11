@@ -16,6 +16,12 @@ public class ReloadCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // Vérifiez si un argument est fourni
+        if (args.length < 1 || !args[0].equalsIgnoreCase("reload")) {
+            sender.sendMessage(getPluginPrefix() + "§cUnknown Command Argument!");
+            return true;
+        }
+
         if (!sender.hasPermission("skyxnetwork.customcommandsplugin.reload") &&
                 !sender.hasPermission("skyxnetwork.customcommandsplugin.*")) {
             sender.sendMessage(getPluginPrefix() + "§cYou do not have permission to use this command.");
