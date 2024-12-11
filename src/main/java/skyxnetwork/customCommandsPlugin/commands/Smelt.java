@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import skyxnetwork.customCommandsPlugin.CustomCommandsPlugin;
 
 public class Smelt implements CommandExecutor {
 
@@ -19,19 +20,19 @@ public class Smelt implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage("§cThis command is for players only!");
+            sender.sendMessage(getPluginPrefix() + "§cThis command is for players only!");
             return true;
         }
 
         if (!player.hasPermission("skyxnetwork.customcommandsplugin.smelt") &&
                 !player.hasPermission("skyxnetwork.customcommandsplugin.*")) {
-            player.sendMessage("§cYou do not have permission to use this command.");
+            player.sendMessage(getPluginPrefix() + "§cYou do not have permission to use this command.");
             return true;
         }
 
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
         if (itemInHand == null || itemInHand.getType() == Material.AIR) {
-            player.sendMessage("§cYou must hold an item!");
+            player.sendMessage(getPluginPrefix() + "§cYou must hold an item!");
             return true;
         }
 
@@ -44,14 +45,17 @@ public class Smelt implements CommandExecutor {
                 int amount = itemInHand.getAmount();
                 itemInHand.setAmount(0);
                 player.getInventory().addItem(new ItemStack(smeltedMaterial, amount));
-                player.sendMessage(plugin.getConfig().getString("messages.smelt-success", "§aYou smelted %input% into %output%!")
-                        .replace("%input%", itemName)
-                        .replace("%output%", smeltedItemName));
+                player.sendMessage(getPluginPrefix() + "§aSmelted " + amount + " " + itemName + " into " + smeltedItemName + "!");
                 return true;
             }
         }
 
-        player.sendMessage(plugin.getConfig().getString("messages.smelt-fail", "§cThis item cannot be melted!"));
+        player.sendMessage(getPluginPrefix() + "§cThis item cannot be smelted!");
         return true;
+    }
+
+    private String getPluginPrefix() {
+        // Caster le plugin pour accéder à CustomCommandsPlugin et récupérer le préfixe
+        return ((CustomCommandsPlugin) plugin).getPluginPrefix();
     }
 }

@@ -7,6 +7,9 @@
 # Github : https://github.com/XPaladiumyX/CustomCommandsPlugin
 # Discord Community : https://discord.gg/pTErYjTh5h
 
+
+# The main plugin prefix.
+Prefix: "§dSky X §9Network §bCOMMANDS §8●⏺&7"
 # REFER TO https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html FOR MATERIAL LIST
 smeltable-items:
   IRON_ORE: IRON_INGOT

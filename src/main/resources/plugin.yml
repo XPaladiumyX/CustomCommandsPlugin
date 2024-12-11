@@ -35,3 +35,5 @@ permissions:
   skyxnetwork.customcommandsplugin.smelt:
     description: Permission to execute the /smelt command.
     default: false
+# Plugin settings
+Prefix: "§dSky X §9Network §bCOMMANDS §8●⏺§7"

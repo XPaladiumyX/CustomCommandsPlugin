@@ -13,6 +13,7 @@ public class CustomCommandsPlugin extends JavaPlugin {
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_LIGHT_GREEN = "\u001B[92m";
     private static final String ANSI_RED = "\u001B[31m";
+    private String pluginPrefix;
 
     @Override
     public void onEnable() {
@@ -29,22 +30,23 @@ public class CustomCommandsPlugin extends JavaPlugin {
         Bukkit.getLogger().info(ANSI_LIGHT_GRAY + "︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺");
 
         saveDefaultConfig(); // Charger ou créer config.yml
+        loadPrefix(); // Charger le préfixe
 
         // Enregistrer les commandes
         if (getCommand("craft") != null) {
-            getCommand("craft").setExecutor(new Craft());
+            getCommand("craft").setExecutor(new Craft(this));
         } else {
             getLogger().warning("/craft command is not defined in plugin.yml!");
         }
 
         if (getCommand("ec") != null) {
-            getCommand("ec").setExecutor(new Enderchest());
+            getCommand("ec").setExecutor(new Enderchest(this));
         } else {
             getLogger().warning("/ec command is not defined in plugin.yml!");
         }
 
         if (getCommand("enderchest") != null) {
-            getCommand("enderchest").setExecutor(new Enderchest());
+            getCommand("enderchest").setExecutor(new Enderchest(this));
         } else {
             getLogger().warning("/enderchest command is not defined in plugin.yml!");
         }
@@ -61,6 +63,7 @@ public class CustomCommandsPlugin extends JavaPlugin {
         }
     }
 
+
     @Override
     public void onDisable() {
         Bukkit.getLogger().info(ANSI_LIGHT_GRAY + "︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹︹");
@@ -74,5 +77,14 @@ public class CustomCommandsPlugin extends JavaPlugin {
         Bukkit.getLogger().info("   ");
         Bukkit.getLogger().info(ANSI_RED + "  Plugin CustomCommandsPlugin disabled !");
         Bukkit.getLogger().info(ANSI_LIGHT_GRAY + "︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺︺");
+    }
+
+    public String getPluginPrefix() {
+        return pluginPrefix;
+    }
+
+    public void loadPrefix() {
+        pluginPrefix = getConfig().getString("Prefix", "§dSky X §9Network §bCOMMANDS §8●⏺§7 ");
+        getLogger().info("Loaded Prefix : " + pluginPrefix);
     }
 }
