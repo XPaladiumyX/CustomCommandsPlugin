@@ -1,5 +1,5 @@
 ﻿# CustomCommandsPlugin
-![Discord]([https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white](https://discord.gg/pTErYjTh5h))
+[![Discord]([https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white](https://discord.gg/pTErYjTh5h))
 Devloped by ✨ | Sky X Network | ✨  
 -
 # Overview  
