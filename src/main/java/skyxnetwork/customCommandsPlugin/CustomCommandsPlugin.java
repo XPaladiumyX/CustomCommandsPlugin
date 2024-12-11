@@ -84,7 +84,7 @@ public class CustomCommandsPlugin extends JavaPlugin {
     }
 
     public void loadPrefix() {
-        pluginPrefix = getConfig().getString("Prefix", "§dSky X §9Network §bCOMMANDS §8●⏺");
+        pluginPrefix = getConfig().getString("Prefix", "§dSky X §9Network §bCOMMANDS §8●⏺§7 ");
         getLogger().info("Loaded Prefix : " + pluginPrefix);
     }
 }
