@@ -41,7 +41,8 @@ messages:
   smelt-success: "§aYou have melted §f%input% §aand obtained §f%output%."
   smelt-fail: "§cThis item cannot be melted."
 ```
-# Supported Permission Manager Plugins :  
+#
+  Supported Permission Manager Plugins :  
 - LuckPerms
 - PermissionsEx
 - UltraPermissions
