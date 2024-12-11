@@ -1,6 +1,6 @@
 ﻿# CustomCommandsPlugin  
 # Devloped by ✨ | Sky X Network | ✨  
--
+
 **Overview**  
 
 CustomCommandsPlugin is a lightweight and highly configurable Minecraft plugin designed for Spigot 1.20-1.20.1 servers. It adds essential utility commands with customizable messages and permissions. The plugin is tailored for server owners looking for a simple solution to enhance gameplay without requiring additional dependencies. However, this plugin is not actively maintained for other developers or server owners.  
@@ -37,16 +37,18 @@ CustomCommandsPlugin is a lightweight and highly configurable Minecraft plugin d
 This plugin is exclusively designed for Paper 1.20-1.20.1. It may not function as intended on other server versions or platforms like Spigot or Bukkit. No further updates or maintenance will be provided.  
 
 **Example Configuration (config.yml)**  
-
-``Prefix: "§dSky X §9Network §bCOMMANDS §8●⏺ "
+````
+```
+Prefix: "§dSky X §9Network §bCOMMANDS §8●⏺ "
 smeltable-items:
   IRON_ORE: IRON_INGOT
   GOLD_ORE: GOLD_INGOT
   SAND: GLASS
 messages:
   smelt-success: "§aYou have melted §f%input% §aand obtained §f%output%."
-  smelt-fail: "§cThis item cannot be melted."``
-
+  smelt-fail: "§cThis item cannot be melted."
+```
+````
 # Supported Permission Manager Plugins :  
 - LuckPerms
 - PermissionsEx
