@@ -1,4 +1,4 @@
-﻿# CustomCommandsPlugin  
+﻿# CustomCommandsPlugin
 Devloped by ✨ | Sky X Network | ✨  
 
 # Overview  
@@ -18,7 +18,7 @@ CustomCommandsPlugin is a lightweight and highly configurable Minecraft plugin d
 /customcommandsplugin reload	Reloads the plugin's configuration.	skyxnetwork.customcommandsplugin.reload  
 
 **Wildcard Permission**  
-**skyxnetwork.customcommandsplugin.***: Grants access to all commands and permissions.  
+skyxnetwork.customcommandsplugin.* : Grants access to all commands and permissions.  
 
 ## Installation  
   - Download the plugin .jar file.  
