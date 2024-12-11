@@ -43,16 +43,20 @@ public class Smelt implements CommandExecutor {
             Material smeltedMaterial = Material.matchMaterial(smeltedItemName);
             if (smeltedMaterial != null) {
                 int amount = itemInHand.getAmount();
-                itemInHand.setAmount(0);
-                player.getInventory().addItem(new ItemStack(smeltedMaterial, amount));
+                itemInHand.setAmount(0); // Retire tous les items fondus de la main
+                player.getInventory().addItem(new ItemStack(smeltedMaterial, amount)); // Ajoute les items fondus
+
+                // Message de succès
                 String successMessage = plugin.getConfig().getString("messages.smelt-success",
                         "§aYou have melted §f%input% §aand obtained §f%output%.");
-                successMessage = successMessage.replace("%input%", itemName).replace("%output%", smeltedItemName);
+                successMessage = successMessage.replace("%input%", amount + " " + itemName)
+                        .replace("%output%", amount + " " + smeltedItemName);
                 player.sendMessage(getPluginPrefix() + successMessage);
                 return true;
             }
         }
 
+        // Message d'échec
         String failMessage = plugin.getConfig().getString("messages.smelt-fail", "§cThis item cannot be melted.");
         player.sendMessage(getPluginPrefix() + failMessage);
         return true;
