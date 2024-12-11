@@ -1,6 +1,6 @@
 ﻿# CustomCommandsPlugin
 Devloped by ✨ | Sky X Network | ✨  
-
+-
 # Overview  
 CustomCommandsPlugin is a lightweight and highly configurable Minecraft plugin designed for Spigot 1.20-1.20.1 servers. It adds essential utility commands with customizable messages and permissions. The plugin is tailored for server owners looking for a simple solution to enhance gameplay without requiring additional dependencies. However, this plugin is not actively maintained for other developers or server owners.  
 
