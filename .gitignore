@@ -111,3 +111,12 @@ buildNumber.properties
 
 # Common working directory
 run/
+
+# Hide plugin.yml
+src/main/resources/plugin.yml
+
+# Hide CustomCommandsPlugin.java
+src/main/java/skyxnetwork/customCommandsPlugin/CustomCommandsPlugin.java
+
+# Hide all files in the commands directory
+src/main/java/skyxnetwork/customCommandsPlugin/commands/
